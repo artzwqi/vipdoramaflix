@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoramaFlix VIP - Acesso Liberado</title>
+    
+    <style>
+        body { 
+            background-color: #0f111a; 
+            color: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: space-between; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+        }
+        .container { 
+            padding: 40px 20px; 
+            max-width: 600px; 
+            width: 100%; 
+            box-sizing: border-box; 
+            margin-top: auto; 
+            margin-bottom: auto; 
+        }
+        h1 { 
+            margin: 0 0 15px 0; 
+            font-size: 28px; 
+            color: #ff2a5f;
+        }
+        p.subtitle { 
+            color: #cccccc; 
+            font-size: 18px; 
+            margin-bottom: 40px; 
+            line-height: 1.5; 
+        }
+        .btn { 
+            background-color: #2AABEE; 
+            color: white; 
+            text-decoration: none; 
+            padding: 18px 30px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(42, 171, 238, 0.4); 
+            display: inline-block; 
+            width: 100%; 
+            max-width: 350px; 
+            transition: transform 0.2s, box-shadow 0.2s; 
+        }
+        .btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(42, 171, 238, 0.6); 
+        }
+        .btn:active { 
+            transform: scale(0.98); 
+        }
+        .aviso-seguro {
+            margin-top: 20px; 
+            font-size: 14px; 
+            color: #888;
+        }
+        footer { 
+            padding: 20px; 
+            font-size: 12px; 
+            color: #666; 
+            width: 100%; 
+            border-top: 1px solid #222; 
+            box-sizing: border-box; 
+            background-color: #0a0b10;
+        }
+        footer a { 
+            color: #888; 
+            text-decoration: none; 
+            margin: 0 10px; 
+        }
+        footer a:hover { 
+            text-decoration: underline; 
+        }
+        .disclaimer { 
+            margin-top: 15px; 
+            font-size: 10px; 
+            color: #555; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            line-height: 1.4; 
+        }
+    </style>
+<!-- Meta Pixel Code -->
+<script async="" src="js/fbevents.js"></script><script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '779584804698471');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=779584804698471&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        function redirecionarVIP() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'AddToCart');
+            }
+
+            let fbp = getCookie('_fbp') || '';
+            let short_id = ""; 
+            let redirect_url = "https://t.me/acessodoramaflixvipbot";
+
+            if (fbp) {
+                let formData = new FormData();
+                formData.append('short_id', short_id);
+                formData.append('fbp', fbp);
+
+                fetch('atualizar_fbp.php', {
+                    method: 'POST',
+                    body: formData,
+                    keepalive: true 
+                });
+            }
+
+            window.location.href = redirect_url;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 O Maior Acervo de Doramas Espera Por Você!</h1>
+        <p class="subtitle">Seu passe de acesso VIP está pronto. Para garantir a melhor qualidade sem travamentos, todo o nosso conteúdo é entregue em uma área de membros segura no Telegram.</p>
+        
+        <a href="javascript:void(0);" onclick="redirecionarVIP();" class="btn">👉 LIBERAR MEU ACESSO AGORA</a>
+        
+        <p class="aviso-seguro">🔒 Você será direcionado para o nosso assistente oficial.</p>
+    </div>
+
+    <footer>
+        <div>
+            <a href="https" target="_blank">Termos de Uso</a> | 
+            <a href="https" target="_blank">Políticas de Privacidade</a>
+        </div>
+        <div class="disclaimer">
+            Este site não é afiliado ao Facebook ou a qualquer entidade da Meta Platforms, Inc. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.
+        </div>
+    </footer>
+
+</body></html>
